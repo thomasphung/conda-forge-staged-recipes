@@ -3,7 +3,12 @@ REM TODO: Getting this error https://dev.azure.com/conda-forge/feedstock-builds/
 REM TODO: "conda.CondaMultiError: [Errno 2] No such file or directory: 'D:\\Miniforge\\pkgs\\csv-validator-1.3.0-h57928b3_0\\bin\\csv-validator-cmd'"
 REM Note: PREFIX, SRC_DIR, LIB, and variables that start with "PKG_" are defined by main Conda build scripts
 REM Referencing https://github.com/conda-forge/openjdk-feedstock/blob/main/recipe/bld.bat
+
+REM Ensure changes to env variables are local to this file
 SETLOCAL
+
+REM List env variables
+SET
 
 REM Define installation path
 SET "INSTALL_PATH=%LIBRARY_PREFIX%\%PKG_NAME%-%PKG_VERSION%-%PKG_BUILDNUM%"

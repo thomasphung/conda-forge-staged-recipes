@@ -25,12 +25,13 @@ test:
     - test -f "$CONDA_PREFIX/bin/csv-validator"  # [unix]
     - find "$CONDA_PREFIX/share/" -maxdepth 1 -type d -name "csv-validator-*" | grep -q .  # [unix]
     - csv-validator --help | grep {{ version }}  # [unix]
-   # Equivalent to pwd
-   # - CD  # [win]
-   # - DIR  # [win]
-   # - conda env config vars list  # [win]
-   # - IF EXIST "%CONDA_PREFIX%\bin\csv-validator-cmd" (EXIT /B 0) ELSE (EXIT /B 1)  # [win]
-   # - csv-validator --help | FINDSTR "{{ version }}"  # [win]
+    - SET  # [win]
+    # Equivalent to pwd
+    - CD  # [win]
+    - DIR  # [win]
+    - conda env config vars list  # [win]
+    - IF EXIST "%CONDA_PREFIX%\bin\csv-validator-cmd" (EXIT /B 0) ELSE (EXIT /B 1)  # [win]
+    - csv-validator --help | FINDSTR "{{ version }}"  # [win]
     - csv-validator --help
 
 about:
